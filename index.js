@@ -3,51 +3,93 @@ const fs = require("fs");
 const path = require('path');
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
+const util = require("util")
 
-// array of questions for user
-const questions = [
-//inquirer to generate questions
-inquirer.prompt (
-    [ 
+const writeFileAsync = util.promisify(fs.writeFile);
+
+const withTM = require('next-transpile-modules')(['react-markdown']);
+
+
+
+// array of questions for user , inquirer will trigger questions
+const promptUser = () =>
+inquirer.prompt ([
+     
         {
           type:'input',
-          message="what is the title of the project?"
           name:'title',
-        validate: (value)=>{if(value){return true} else{return 'i need a value to continue}},
-     },
-         {
- 
+          message:"what is the title of the project?",
+        },
+        {
+          type: 'input',
+          name: 'description',
+          message: 'Please enter a description.',
+        },
+
+        {
           type:'input',
-          message="What are the Sections involved?"
-       name:'installation',
-      //validate: (value)=>{if(value){return true} else{return 'i need a value to continue}},
-     },
-         {
- 
+          name:'installation',
+          message:"Please give instructions for installation of the application.",
+        },
+
+        {
           type:'input',
-          message="instruction to bbe follow?"
-       name:'instruction',
-      //validate: (value)=>{if(value){return true} else{return 'i need a value to continue}},
-     },
-     {
- 
+          name:'usage',
+          message:"Please describe how to use this application.",
+        },
+
+        {
           type:'input',
-          message="any credits?"
-       name:'installation',
-      //validate: (value)=>{if(value){return true} else{return 'i need a value to continue}},
-     },
+          name:'contributions',
+          message:"Please include any contributions or resources.",
+        },
+
+        {
+          type:'input',
+          name:'tests',
+          message:"Please enter any test guidelines or methods here.",
+        },
+
+        {
+          type: 'input',
+          name: 'github',
+          message: 'Please enter your GitHub username.'
+        },
+
+        {
+          type: 'list',
+          name: 'license',
+          message: 'Please select a license.',
+          choices: [
+              'Mozilla',
+              'Apache',
+              'MIT'
+          ]
+        },
+
+        {  
+          type:'input',
+          message:"any credits?",
+           name:'installation',
+      
+        },
 
 
-];
-
-// function to write README file
-function writeToFile(fileName, data) {
-}
+]);
 
 // function to initialize program
 function init() {
+  inquirer.prompt(questions).then((responses) => {
+    console.log("Creating Professional README.md File...");
+    writeToFile("./dist/README.md", generateMarkdown({ ...responses }));
+  });
+}
+init();
 
+// function to write README file
+function writeToFile(fileName, data) {
+  return fs.writeFileSync(path.join(process.cwd().fileName).data);
 }
 
-// function call to initialize program
-init();
+
+

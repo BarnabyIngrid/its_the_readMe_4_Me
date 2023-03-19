@@ -9,8 +9,8 @@ A mini node js ReadMe generator Project
 
 
 ## :wave: Description: 
-<p> For this project the "Its the ReadMe 4 Me" Generator was created for an at scale professional readMe generation to smooth your projects 
-need along. This ReadMe generator was created by using NodeJS and Inquirer (an NPM product)
+<p> For this project the "Its the ReadMe 4 Me" Generator is an at scale approach to professional readMe generation to equip your projects 
+needs for repo structure. This ReadMe generator was created by using NodeJS and Inquirer (an NPM product)
 
 </p>
   

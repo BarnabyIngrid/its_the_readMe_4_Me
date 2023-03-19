@@ -19,12 +19,12 @@ function generateMarkdown(data) {
   ## Screenshot
   ![alt-text](${data.screenshot})
   ## Table of Contents
-  * [Installations](#installations)
-  * [Usage](#usage)
-  * [Licence](#HowtoUseThisApplication)
-  * [Contributors](#contributors)
-  * [Testing](#testing)
-  * [Questions](#questions)
+  * [Installations](#installations)<br/>
+  * [Usage](#usage)<br/>
+  * [Licence](#HowtoUseThisApplication)<br/>
+  * [Contributors](#contributors)<br/>
+  * [Testing](#testing)<br/>
+  * [Questions](#questions)<br/>
   ## Installations
   ${data.installations}
   ## Usage
@@ -37,12 +37,12 @@ function generateMarkdown(data) {
   ${data.test}
   ## Questions
   Please send your questions [here](mailto:${data.email}?subject=[GitHub]%20Dev%20Connect) or visit [github/${data.creator}](https://github.com/${data.creator}).
-  `;
+  If you have questions about this application, please contact me via GitHub at username ${inquirerResponse.github} or by email at ${inquirerResponse.email}.
+  ## License
+  ${renderLicenseBadge(inquirerResponse.license)} <br/>
+  ${renderLicenseSection(inquirerResponse.license)} <br/>
+  ${renderLicenseLink(inquirerResponse.license)} <br/>
+      `;
   }
   
-  
-`;
-}
-
-module.exports = generateMarkdown()
-
+  module.exports = generateMarkdown;

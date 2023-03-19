@@ -10,10 +10,14 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BarnabyIngrid/its_the_readMe_4_Me"
-      },
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "git+https://github.com/BarnabyIngrid/its_the_readMe_4_Me"
+  },
+  "homepage": "git+https://github.com/BarnabyIngrid/its_the_readMe_4_Me",
   "dependencies": {
-    "inquirer": "^6.3.1"
+    "inquirer": "^6.5.2"
   }
 }
