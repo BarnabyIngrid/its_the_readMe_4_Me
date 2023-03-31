@@ -30,13 +30,19 @@ Main Resources:
 - Npm
 
 ## Contributors
-N/A
+Dennis Itua Tutor from Bootcamp
 ## Testing
 ```
-N/A
+Tested and proved with Tutor guidance
 ```
 ## Demo
-TBD
+Due video being quite large a screeshot has been added.
+
+![image](https://user-images.githubusercontent.com/119970657/229251337-847fb5dd-30a0-4b95-90d0-c956158fc35a.png)
+
+
+
+
 ## License
 
         Licensed under the MIT license.
