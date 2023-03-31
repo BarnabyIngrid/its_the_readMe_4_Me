@@ -18,6 +18,9 @@
   },
   "homepage": "git+https://github.com/BarnabyIngrid/its_the_readMe_4_Me",
   "dependencies": {
-    "inquirer": "^6.5.2"
+    "index": "^0.4.0",
+    "inquirer": "^6.5.2",
+    "js": "^0.1.0",
+    "node": "^19.8.1"
   }
 }
